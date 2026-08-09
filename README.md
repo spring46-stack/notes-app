@@ -1,3 +1,6 @@
+# Qiita記事
+https://qiita.com/suneo46/items/68e9fb74c30309270cd7
+
 # メモ帳（Notes App）
 
 React + Vite で作った、CRUD・検索・Markdown対応のメモアプリです。
