@@ -1,0 +1,422 @@
+.app-shell {
+  display: flex;
+  height: 100vh;
+}
+
+/* ---------- サイドバー ---------- */
+
+.sidebar {
+  width: 300px;
+  flex-shrink: 0;
+  background: var(--panel);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.app-title {
+  font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.new-note-button {
+  border: none;
+  border-radius: var(--radius);
+  background: var(--highlight);
+  color: #fff;
+  padding: 8px 12px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.new-note-button:hover {
+  opacity: 0.92;
+}
+
+/* ---------- 検索欄 ---------- */
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 10px;
+  margin-bottom: 14px;
+  background: var(--bg);
+}
+
+.search-icon {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.search-bar input {
+  border: none;
+  background: transparent;
+  outline: none;
+  flex: 1;
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+
+/* ---------- メモ一覧 ---------- */
+
+.note-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.sidebar-empty {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.note-list-item {
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius);
+  padding: 10px 10px;
+  margin-bottom: 2px;
+  border-left: 3px solid transparent;
+  transition: background-color 0.12s ease, border-color 0.12s ease;
+}
+
+.note-list-item:hover {
+  background: var(--accent-soft);
+}
+
+.note-list-item.is-selected {
+  background: var(--accent-soft);
+  border-left-color: var(--accent);
+}
+
+.note-list-item-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.note-list-item-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.note-list-item-date {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+}
+
+.note-list-item-preview {
+  margin: 4px 0 0;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.spec-link {
+  margin-top: 12px;
+  border: none;
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  text-decoration: underline;
+  padding: 6px;
+  align-self: flex-start;
+}
+
+.spec-link:hover {
+  color: var(--ink);
+}
+
+/* ---------- 右側: エディター ---------- */
+
+.editor {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 32px;
+  min-width: 0;
+}
+
+.editor-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.title-input {
+  flex: 1;
+  min-width: 200px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+  color: var(--ink);
+}
+
+.editor-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.view-tabs {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.view-tab {
+  border: none;
+  background: var(--panel);
+  padding: 6px 14px;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.view-tab.is-active {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+}
+
+.delete-note-button {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--panel);
+  color: var(--danger);
+  padding: 6px 12px;
+  font-size: 0.82rem;
+}
+
+.delete-note-button:hover {
+  background: var(--danger);
+  color: #fff;
+  border-color: var(--danger);
+}
+
+.updated-at {
+  margin: 4px 0 16px;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- 本文: 編集(textarea) ---------- */
+
+.content-textarea {
+  flex: 1;
+  resize: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--panel);
+  padding: 16px;
+  font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--ink);
+  outline: none;
+}
+
+.content-textarea:focus {
+  border-color: var(--accent);
+}
+
+/* ---------- 本文: プレビュー(Markdown→HTML) ---------- */
+
+.markdown-preview {
+  flex: 1;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--panel);
+  padding: 20px 24px;
+  line-height: 1.8;
+}
+
+.markdown-preview :first-child {
+  margin-top: 0;
+}
+
+.markdown-preview h1,
+.markdown-preview h2,
+.markdown-preview h3 {
+  font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+  line-height: 1.4;
+}
+
+.markdown-preview code {
+  background: var(--accent-soft);
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+}
+
+.markdown-preview pre {
+  background: var(--ink);
+  color: #f6f4ef;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  overflow-x: auto;
+}
+
+.markdown-preview pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+.markdown-preview blockquote {
+  margin: 0;
+  padding: 4px 14px;
+  border-left: 3px solid var(--accent);
+  color: var(--ink-soft);
+  background: var(--accent-soft);
+}
+
+.markdown-preview a {
+  color: var(--accent);
+}
+
+.preview-empty {
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+/* ---------- 未選択時の表示 ---------- */
+
+.empty-state {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--ink-soft);
+  text-align: center;
+  padding: 24px;
+}
+
+.empty-state-icon {
+  font-size: 2.4rem;
+  margin: 0;
+}
+
+.empty-state-text {
+  margin: 0;
+}
+
+/* ---------- 仕様書モーダル ---------- */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(38, 37, 33, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 10;
+}
+
+.modal-panel {
+  background: var(--bg);
+  width: 100%;
+  max-width: 720px;
+  max-height: 80vh;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.modal-close {
+  border: none;
+  background: transparent;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--ink-soft);
+}
+
+.modal-close:hover {
+  color: var(--ink);
+}
+
+.modal-body {
+  margin: 0;
+  padding: 20px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+/* ---------- レスポンシブ(スマホ幅) ---------- */
+
+@media (max-width: 720px) {
+  .app-shell {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    max-height: 40vh;
+  }
+
+  .editor {
+    padding: 20px;
+  }
+
+  .content-textarea,
+  .markdown-preview {
+    min-height: 240px;
+  }
+}

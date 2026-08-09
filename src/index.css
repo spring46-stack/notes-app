@@ -1,0 +1,45 @@
+:root {
+  /* 「図書カード・索引カード」をイメージした配色です。
+     タスク帳(ノート風)とはあえて雰囲気を変え、
+     少し落ち着いた"整理された引き出し"のような印象にしています。 */
+  --bg: #f6f4ef;            /* 全体の背景(生成り色) */
+  --panel: #ffffff;         /* カードや入力欄の背景 */
+  --border: #e3ded2;        /* 境界線の色 */
+  --ink: #262521;           /* 文字色 */
+  --ink-soft: #837c6d;      /* 補足文字の色 */
+  --accent: #4d6a8a;        /* アクセント(タブ選択色・見出し帯) */
+  --accent-soft: #e7edf3;   /* アクセントの薄い背景 */
+  --highlight: #d99a3d;     /* 強調色(新規作成ボタンなど) */
+  --danger: #b4503f;        /* 削除など注意を促す色 */
+
+  --radius: 8px;
+  --shadow: 0 1px 3px rgba(38, 37, 33, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Meiryo",
+    sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  font-family: inherit;
+}
