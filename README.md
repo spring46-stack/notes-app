@@ -1,3 +1,10 @@
+# 画面画像（プレビュー）
+<img width="1280" height="720" alt="プレビュー画面" src="https://github.com/user-attachments/assets/84b75ab9-b6b6-483c-b696-af5187ef0b6b" />
+
+# 画面画像（編集）
+<img width="1280" height="720" alt="編集画面" src="https://github.com/user-attachments/assets/78eff9f1-b80d-4620-b567-0204d3c9f5db" />
+
+
 # Qiita記事
 https://qiita.com/suneo46/items/68e9fb74c30309270cd7
 
