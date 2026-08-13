@@ -4,9 +4,6 @@
 # 画面画像（編集）
 <img width="1280" height="720" alt="編集画面" src="https://github.com/user-attachments/assets/78eff9f1-b80d-4620-b567-0204d3c9f5db" />
 
-# Qiita記事
-https://qiita.com/suneo46/items/68e9fb74c30309270cd7
-
 React + Viteで作った、CRUD・検索・Markdown対応のメモアプリです。
 
 - 仕様の詳細は [`SPEC.md`](./SPEC.md)、アプリ内の「仕様書を見る」からも確認できます。
